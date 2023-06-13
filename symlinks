@@ -1,0 +1,4 @@
+.dotfiles/config|.config
+.dotfiles/tmux|.tmux
+.dotfiles/tmux/tmux.conf|.tmux.conf
+.dotfiles/zsh/rc.zsh|.zshrc
