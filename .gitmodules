@@ -6,4 +6,4 @@
 	url = https://github.com/zsh-users/zsh-completions
 [submodule "config/zsh-syntax-highlighting"]
 	path = config/zsh-syntax-highlighting
-	url =  https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
