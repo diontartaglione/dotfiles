@@ -7,3 +7,6 @@
 [submodule "config/zsh-syntax-highlighting"]
 	path = config/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "/Users/diontartaglione/.dotfiles/tmux/plugins/tpm"]
+	path = /Users/diontartaglione/.dotfiles/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
