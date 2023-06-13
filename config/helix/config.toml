@@ -1,0 +1,21 @@
+theme = "base16_transparent"
+
+[editor]
+line-number = "relative"
+color-modes = true
+mouse = false
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.insert]
+j = { k = "normal_mode" }

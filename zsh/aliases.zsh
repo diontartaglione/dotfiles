@@ -1,0 +1,16 @@
+# Aliases
+
+alias brave="open -a Brave\ Browser"
+alias vscode="open -a Visual\ Studio\ Code"
+alias jn="jupyter notebook"
+alias whatsapp="open -a WhatsApp"
+alias max="open -a Max"
+alias discord="open -a Discord"
+alias slack="open -a Slack"
+alias subl="open -a Sublime\ Text"
+alias ls="exa --icons -1 -G"
+alias cd1="cd ../"
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
