@@ -18,7 +18,7 @@ vi-git-untracked(){
 }
 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
+zstyle ':vcs_info:git:*' formats "%{$fg[green]%} %{$fg[orange]%}%m%{$fg[yellow]%}%u%{$fg[red]%}%c $fg[green]%}%{$fg[green]%} %b% %{$reset_color%}"
 
 function conda_env() {
   if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
@@ -26,9 +26,11 @@ function conda_env() {
   fi
 }
 
-RPROMPT='$(conda_env)%D{%H:%M:%S}'
+# Git status for prompt
 
-PROMPT="%F{8}%~%f"
+RPROMPT='$(conda_env)%{$fg[grey]%}%D{%H:%M:%S}'
+
+PROMPT="%{$fg[grey]%}%~%f"
 PROMPT+=' '
 PROMPT+="\$vcs_info_msg_0_"
 PROMPT+='
