@@ -5,7 +5,7 @@ font:
   # glyph_offset:
     # y: 9
   normal:
-    family: "JetBrainsMonoNL Nerd Font Mono"
+    family: "Hack Nerd Font"
 window:
   padding:
     x: 15
