@@ -2,6 +2,10 @@
 
 # Git status for prompt
 git_prompt() {
+
+ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    return
+ fi 
   local git_prompt=""
   local git_status=$(git status --porcelain 2>/dev/null)
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
