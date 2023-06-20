@@ -6,7 +6,7 @@ git_prompt() {
   local git_status=$(git status --porcelain 2>/dev/null)
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
   
-  if [[ -n "$git_status" ]]; then
+ if [[ -n "$git_status" || ! "$(git diff --staged --quiet)" ]]; then    
     local untracked_icon="%{%{$fg[yellow]%}*%{$reset_color%}%}"
     local modified_icon="%{%{$fg[red]%}!%{$reset_color%}%}"
     local staged_icon="%{%{$fg[blue]%}+%{$reset_color%}%}"
