@@ -60,11 +60,12 @@ vi-git-untracked() {
 
 zstyle ':vcs_info:*' check-for-changes true
 
-RPROMPT='$(conda_env)%{$fg[grey]%}%D{%H:%M:%S}'
+RPROMPT='$(conda_env)%F{#7C7D83}%D{%H:%M:%S}%f'
 
-PROMPT="%{$fg[grey]%}%~%f \$(git_prompt) %{$reset_color%}"
+PROMPT="%F{#7C7D83}%~%f \$(git_prompt) %{$reset_color%}"
 PROMPT+='
 ❯ '
+
 
 # Set up LSCOLORS for directory and file colors
 
