@@ -7,6 +7,7 @@ git_prompt() {
     return
  fi 
   local git_prompt=""
+  local git_icons=" "
   local git_status=$(git status --porcelain 2>/dev/null)
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
   
@@ -16,15 +17,15 @@ git_prompt() {
     local staged_icon="%{%{$fg[blue]%}+%{$reset_color%}%}"
 
     if [[ $git_status == *'??'* ]]; then
-      git_prompt+="$untracked_icon"  # Untracked files
+      git_icons+="$untracked_icon"  # Untracked files
     fi
     if [[ $git_status == *'M'* ]]; then
-      git_prompt+="$modified_icon"  # Modified files
+      git_icons+="$modified_icon"  # Modified files
     fi
     if ! git diff --cached --quiet; then
-      git_prompt+="$staged_icon"  # Staged files
+      git_icons+="$staged_icon"  # Staged files
     fi
-    git_prompt="%{$fg[green]%} ${git_prompt} %{$fg[green]%}%{$fg[green]%} ${branch}%{$reset_color%}"
+    git_prompt="%{$fg[green]%} %{$fg[green]%} %{$fg[green]%}${branch} %${git_icons}"
   fi
   
   echo -n "$git_prompt"
@@ -32,7 +33,7 @@ git_prompt() {
 
 function conda_env() {
   if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-    echo "%{$fg[grey]%}(${CONDA_DEFAULT_ENV})%{$reset_color%} "
+    echo "%F{#7C7D83}(${CONDA_DEFAULT_ENV})%{$reset_color%} "
   fi
 }
 
