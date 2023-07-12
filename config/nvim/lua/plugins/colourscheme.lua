@@ -1,9 +1,12 @@
 return {
 
-  -- Configure LazyVim to load colour scheme
+  -- Configure LazyVim to load colour schemes --
+  --
   {
-    "folke/tokyonight.nvim",
+    "chriskempson/base16-vim",
     lazy = true,
-    opts = { style = "night" },
+    config = function()
+      vim.cmd("colorscheme base16-default-dark")
+    end,
   },
 }
