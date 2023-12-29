@@ -56,3 +56,8 @@ export TERM=xterm-256color
 source $ZSH_THEME_PATH/pure-theme.zsh-theme
 
 
+# ### Start Sketchybar
+# brew services start sketchybar
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

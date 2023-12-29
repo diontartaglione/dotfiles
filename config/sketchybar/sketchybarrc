@@ -1,0 +1,108 @@
+#!/bin/sh
+
+# LOAD DEFINED COLORS
+source "$CONFIG_DIR/colors.sh"
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEMS_DIR="$CONFIG_DIR/items"
+
+bar=(
+  color=$TRANSPARENT
+  height=24
+  sticky=on
+  padding_left=9
+  padding_right=3
+  y_offset=4
+  margin=7
+  corner_radius=12
+  blur_radius=30
+)
+
+default=(
+  icon.drawing=on
+  label.font="JetBrainsMonoNL Nerd Font Mono:Regular:12"
+  label.padding_left=4
+  label.padding_right=4
+  label.color=$WHITE
+
+)
+
+sketchybar \
+  --bar "${bar[@]}" \
+  --default "${default[@]}"
+
+
+############## LEFT ITEMS ############## 
+# sketchybar \
+#   --add item space left \
+#   --set space script='sketchybar --set $NAME label="[$(echo "$INFO" | jq .[])]"'\
+#   --subscribe space space_change
+
+# SPACES
+source $ITEMS_DIR/spaces.sh
+
+# APP NAME
+sketchybar \
+  --add item app_name left \
+  --set app_name background.color=$BACKGROUND \
+  --set app_name background.padding_right=48 \
+  --set app_name label.padding_right=16 \
+  --set app_name script='sketchybar --set $NAME label="$USER::$INFO"' \
+  --subscribe app_name front_app_switched
+
+
+
+############## RIGHT ITEMS ############## 
+# DATE TIME
+sketchybar \
+  --add item time right \
+  --set time script='sketchybar --set $NAME label="$(date "+%a %d %b %H:%M")"' \
+             update_freq=30 \
+  --set time background.color=$WHITE\
+  --set time label.color=0xff3E3E3F  \
+  --set time label.padding_left=16 \
+  --set time label.padding_right=16 \
+  --set time background.corner_radius=12 \
+  --subscribe time system_woke
+
+# WIFI
+sketchybar \
+  --add item ip right \
+  --set ip script='sketchybar --set $NAME label="/$(ipconfig getifaddr en0)/"'\
+  --set ip background.color=$WHITE \
+  --set ip background.padding_right=-10 \
+  --set ip label.color=$BACKGROUND \
+  --set ip label.padding_left=16 \
+  --set ip label.padding_right=16 \
+  --subscribe ip wifi_change
+
+# BATTERY
+sketchybar \
+  --add item battery right \
+  --set battery background.color=$WHITE\
+  --set battery background.padding_right=-10 \
+  --set battery icon.color=$BACKGROUND \
+  --set battery icon.padding_left=16\
+  --set battery label.color=$BACKGROUND \
+  --set battery label.padding_left=8 \
+  --set battery label.padding_right=16 \
+  --set battery script="$PLUGIN_DIR/battery.sh"       \
+                update_freq=120                       \
+   --subscribe battery system_woke power_source_change
+
+
+# CPU PERCENT
+sketchybar \
+  --add item cpu_percent right \
+  --set cpu_percent background.color=$WHITE\
+  --set cpu_percent background.padding_right=-10 \
+  --set cpu_percent icon.color=$BACKGROUND \
+  --set cpu_percent icon.padding_left=16\
+  --set cpu_percent label.color=$BACKGROUND \
+  --set cpu_percent icon.font="JetBrainsMonoNL Nerd Font Mono:Regular:12" \
+  --set cpu_percent label.padding_left=8 \
+  --set cpu_percent label.padding_right=16 \
+  --set cpu_percent script="$PLUGIN_DIR/cpu.sh"       \
+                update_freq=2                       \
+
+sketchybar --update

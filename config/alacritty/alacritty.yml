@@ -5,7 +5,7 @@ font:
   # glyph_offset:
     # y: 9
   normal:
-    family: "MesloLGS NF"
+    family: "JetBrainsMonoNL Nerd Font Mono"
 window:
   padding:
     x: 15
@@ -13,7 +13,7 @@ window:
   # dimensions:
     #columns: 120
     #lines: 40
-  opacity: 0.95
+  opacity: 0.9
   decorations: buttonless
 
 # Specifying '0' will disable timeout for blinking
@@ -514,7 +514,7 @@ schemes:
 
 
     ### hex_steel ###
-    hex_steel: &hex_steel
+  hex_steel: &hex_steel
 
      # Default colors
      primary:
@@ -547,8 +547,42 @@ schemes:
        magenta: '0xe27e8d'
        cyan: '0x70e1e8'
        white: '0xffffff'
-      
-      
+   
+    # Colors (kanagawa)
+  kanagawa: &kanagawa
+
+   primary:
+     background: '0x1f1f28'
+     foreground: '0xdcd7ba'
+   
+   normal:
+     black:   '0x090618'
+     red:     '0xc34043'
+     green:   '0x76946a'
+     yellow:  '0xc0a36e'
+     blue:    '0x7e9cd8'
+     magenta: '0x957fb8'
+     cyan:    '0x6a9589'
+     white:   '0xc8c093'
+   
+   bright:
+     black:   '0x727169'
+     red:     '0xe82424'
+     green:   '0x98bb6c'
+     yellow:  '0xe6c384'
+     blue:    '0x7fb4ca'
+     magenta: '0x938aa9'
+     cyan:    '0x7aa89f'
+     white:   '0xdcd7ba'
+   
+   selection:
+     background: '0x2d4f67'
+     foreground: '0xc8c093'
+   
+   indexed_colors:
+     - { index: 16, color: '0xffa066' }
+     - { index: 17, color: '0xff5d62' }
+
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
@@ -566,7 +600,7 @@ schemes:
 # *city-lights
 # *hex_steel
 
-colors: *doom-two
+colors: *kanagawa
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

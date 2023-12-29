@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# COLORS
+
+export BACKGROUND=0xff1B1721
+export FOREGROUND=0xFF666666
+export WHITE=0xffDEDEDE
+export TRANSPARENT=00FFFFFF
