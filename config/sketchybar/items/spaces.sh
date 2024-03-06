@@ -18,7 +18,7 @@ do
                               icon.padding_right=24                       \
                               icon.font="JetBrainsMonoNL Nerd Font Mono:Regular:18" \
                               icon.highlight_color=$WHITE                 \
-                              background.color=$BACKGROUND                \
+                              background.color=$TRANSPARENT \
                               background.padding_left=-8                  \
                               background.padding_right=-12                \
                               background.corner_radius=12                 \

@@ -44,10 +44,10 @@ source $ITEMS_DIR/spaces.sh
 # APP NAME
 sketchybar \
   --add item app_name left \
-  --set app_name background.color=$BACKGROUND \
+  --set app_name background.color=$TRANSPARENT \
   --set app_name background.padding_right=48 \
   --set app_name label.padding_right=16 \
-  --set app_name script='sketchybar --set $NAME label="$USER::$INFO"' \
+  --set app_name script='sketchybar --set $NAME label="$INFO"' \
   --subscribe app_name front_app_switched
 
 
@@ -58,8 +58,8 @@ sketchybar \
   --add item time right \
   --set time script='sketchybar --set $NAME label="$(date "+%a %d %b %H:%M")"' \
              update_freq=30 \
-  --set time background.color=$WHITE\
-  --set time label.color=0xff3E3E3F  \
+  --set time background.color=$TRANSPARENT \
+  --set time label.color=$WHITE\
   --set time label.padding_left=16 \
   --set time label.padding_right=16 \
   --set time background.corner_radius=12 \
@@ -69,9 +69,9 @@ sketchybar \
 sketchybar \
   --add item ip right \
   --set ip script='sketchybar --set $NAME label="/$(ipconfig getifaddr en0)/"'\
-  --set ip background.color=$WHITE \
+  --set ip background.color=$TRANSPARENT \
   --set ip background.padding_right=-10 \
-  --set ip label.color=$BACKGROUND \
+  --set ip label.color=$WHITE \
   --set ip label.padding_left=16 \
   --set ip label.padding_right=16 \
   --subscribe ip wifi_change
@@ -79,11 +79,11 @@ sketchybar \
 # BATTERY
 sketchybar \
   --add item battery right \
-  --set battery background.color=$WHITE\
+  --set battery background.color=$TRANSPARENT \
   --set battery background.padding_right=-10 \
-  --set battery icon.color=$BACKGROUND \
+  --set battery icon.color=$WHITE \
   --set battery icon.padding_left=16\
-  --set battery label.color=$BACKGROUND \
+  --set battery label.color=$WHITE \
   --set battery label.padding_left=8 \
   --set battery label.padding_right=16 \
   --set battery script="$PLUGIN_DIR/battery.sh"       \
@@ -94,11 +94,11 @@ sketchybar \
 # CPU PERCENT
 sketchybar \
   --add item cpu_percent right \
-  --set cpu_percent background.color=$WHITE\
+  --set cpu_percent background.color=$TRANSPARENT \
   --set cpu_percent background.padding_right=-10 \
-  --set cpu_percent icon.color=$BACKGROUND \
+  --set cpu_percent icon.color=$WHITE \
   --set cpu_percent icon.padding_left=16\
-  --set cpu_percent label.color=$BACKGROUND \
+  --set cpu_percent label.color=$WHITE \
   --set cpu_percent icon.font="JetBrainsMonoNL Nerd Font Mono:Regular:12" \
   --set cpu_percent label.padding_left=8 \
   --set cpu_percent label.padding_right=16 \

@@ -1,8 +1,10 @@
 # Aliases
 
+alias orca="~/Orca-c/build/orca"
 alias brave="open -a Brave\ Browser"
 alias vscode="open -a Visual\ Studio\ Code"
 alias jn="jupyter notebook"
+alias jl="jupyter lab"
 alias whatsapp="open -a WhatsApp"
 alias max="open -a Max"
 alias discord="open -a Discord"
