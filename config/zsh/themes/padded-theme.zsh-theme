@@ -2,19 +2,20 @@
 
 # Git status for prompt
 git_prompt() {
-
- if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     return
- fi 
+  fi
   local git_prompt=""
   local git_icons=" "
   local git_status=$(git status --porcelain 2>/dev/null)
   local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  
- if [[ -n "$git_status" || ! "$(git diff --staged --quiet)" ]]; then    
-    local untracked_icon="%{%{$fg[yellow]%}*%{$reset_color%}%}"
-    local modified_icon="%{%{$fg[red]%}!%{$reset_color%}%}"
-    local staged_icon="%{%{$fg[blue]%}+%{$reset_color%}%}"
+  local background_color="%K{#585b70}" # Change 'blue' to the desired background color
+  local separator="%F{black}%K{#585b70}%f%k" # Separator with background
+
+  if [[ -n "$git_status" || ! "$(git diff --staged --quiet)" ]]; then
+    local untracked_icon="%{$background_color%}$separator%F{yellow}%K{blue}*%f%k$separator"
+    local modified_icon="%{$background_color%}$separator%F{red}!%f$separator"
+    local staged_icon="%{$background_color%}$separator%F{blue}%K{blue}+%f%k$separator"
 
     if [[ $git_status == *'??'* ]]; then
       git_icons+="$untracked_icon"  # Untracked files
@@ -25,9 +26,9 @@ git_prompt() {
     if ! git diff --cached --quiet; then
       git_icons+="$staged_icon"  # Staged files
     fi
-    git_prompt="%{$fg[green]%}  %{$fg[green]%} %{$fg[green]%}${branch} %${git_icons}"
+    git_prompt="%{$background_color%}$separator%F{green}%K{$background_colour%} %{$background_color%}$separator%F{green}%K{blue} %F{green}%K{blue}${branch}%f%k $git_icons"
   fi
-  
+
   echo -n "$git_prompt"
 }
 

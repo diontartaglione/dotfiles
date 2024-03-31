@@ -5,7 +5,7 @@ font:
   # glyph_offset:
     # y: 9
   normal:
-    family: "JetBrainsMonoNL Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
 window:
   padding:
     x: 15
@@ -583,6 +583,37 @@ schemes:
      - { index: 16, color: '0xffa066' }
      - { index: 17, color: '0xff5d62' }
 
+   mocha_catpuccin: &mocha_catpuccin
+     # Default colors
+     primary:
+       background: '#252525'  # base
+       foreground: '#cdd6f4'  # text
+       # Colors the cursor will use if `custom_cursor_colors` is true
+     cursor:
+       text: '#1e1e2e'  # base
+       cursor: '#cdd6f4'  # text
+       # Normal colors
+     normal:
+       black:   '#313244'  # surface0
+       red:     '#f38ba8'  # red
+       green:   '#a6e3a1'  # green
+       yellow:  '#f9e2af'  # yellow
+       blue:    '#89b4fa'  # blue
+       magenta: '#cba6f7'  # mauve
+       cyan:    '#94e2d5'  # teal
+       white:   '#cdd6f4'  # text
+       # Bright colors
+     bright:
+       black:   '#585b70'  # surface2
+       red:     '#f2cdcd'  # flamingo
+       green:   '#7da87e'  # secondary_cursor_insert
+       yellow:  '#fab387'  # peach
+       blue:    '#74c7ec'  # sapphire
+       magenta: '#f5c2e7'  # pink
+       cyan:    '#89dceb'  # sky
+       white:   '#e4e4e4'  # This could be an adjusted lighter color based on the palette, like #b4befe (lavender) or a lightened text color
+
+
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
@@ -599,9 +630,10 @@ schemes:
 # *tomorrow-night
 # *city-lights
 # *hex_steel
+# *kanagawa
+# *mocha_catpuccin
 
-colors: *kanagawa
-
+colors: *mocha_catpuccin
 #######################################
 ##       END OF COLOR SCHEMES        ##
 #######################################

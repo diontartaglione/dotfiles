@@ -1,4 +1,4 @@
-theme = "kanagawa_transparent"
+theme = "catppucin_mocha_transparent"
 
 [editor]
 line-number = "relative"

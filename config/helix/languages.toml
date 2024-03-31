@@ -2,3 +2,12 @@
 # name = "markdown"
 # language-server = { command = "/Users/diontartaglione/.cargo/bin/mdpls" }
 # config = { markdown.preview.auto = true }
+
+
+
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "typescript" ] }
+auto-format = true

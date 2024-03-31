@@ -56,8 +56,22 @@ export TERM=xterm-256color
 source $ZSH_THEME_PATH/pure-theme.zsh-theme
 
 
+
+export PATH="/usr/local/texlive/2024basic/bin/universal-darwin:$PATH"
+
+# JAVA VERSION
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+
+
 # ### Start Sketchybar
 # brew services start sketchybar
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# bun completions
+[ -s "/Users/diontartaglione/.bun/_bun" ] && source "/Users/diontartaglione/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
