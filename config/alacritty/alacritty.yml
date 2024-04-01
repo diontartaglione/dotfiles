@@ -614,7 +614,36 @@ schemes:
        white:   '#e4e4e4'  # This could be an adjusted lighter color based on the palette, like #b4befe (lavender) or a lightened text color
 
 
-######################################################################
+   mono: &mono
+    # Default colors
+    primary:
+      background: '#252525'  # base
+      foreground: '#cdd6f4'  # text
+    cursor:
+      text: '#1e1e2e'  # base
+      cursor: '#cdd6f4'  # text
+     # Normal colors
+    normal:
+      black:   '#313244'  # surface0
+      red:     '#404055'  # red (adjustment for monochrome)
+      green:   '#57575a'  # green (adjustment for monochrome)
+      yellow:  '#6e6e71'  # yellow (adjustment for monochrome)
+      blue:    '#85858a'  # blue (adjustment for monochrome)
+      magenta: '#9c9c9f'  # mauve (adjustment for monochrome)
+      cyan:    '#b3b3b6'  # teal (adjustment for monochrome)
+      white:   '#cdd6f4'  # text
+    # Bright colors
+    bright:
+      black:   '#4b4b4e'  # surface2 (adjustment for monochrome)
+      red:     '#d4d4d7'  # flamingo (adjustment for monochrome)
+      green:   '#707073'  # secondary_cursor_insert (adjustment for monochrome)
+      yellow:  '#87878b'  # peach (adjustment for monochrome)
+      blue:    '#a0a0a4'  # sapphire (adjustment for monochrome)
+      magenta: '#b7b7bb'  # pink (adjustment for monochrome)
+      cyan:    '#ceced1'  # sky (adjustment for monochrome)
+      white:   '#e4e4e4'  # This could be an adjusted lighter color based on the palette
+  
+  ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
 # Available themes are:
